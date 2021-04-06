@@ -1,38 +1,79 @@
-.App {
-  text-align: center;
+/********************** base css **********************/
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--app-gray-light);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  --app-green: #7c9473;
+  --app-green-light: #cfdac8;
+  --app-gray: #cdd0cb;
+  --app-gray-light: #e8eae6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+::-moz-selection {
+  color: var(--app-gray);
+  background: var(--app-green);
+}
+
+::selection {
+  color: var(--app-gray);
+  background: var(--app-green);
+}
+
+/********************** base css **********************/
+
+/********************** common styles **********************/
+
+.FormContainer {
+  width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.Error {
+  background-color: var(--app-gray);
+  border: 1px solid var(--app-green);
+  color: var(--app-green);
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.mb {
+  margin-bottom: 20px !important;
+}
+
+.GreenCenteredLink {
+  text-align: center;
+  color: var(--app-green);
+  cursor: pointer;
+  margin: 10px 0;
+}
+
+/********************** common styles **********************/
+
+/********************** auth page **********************/
+
+.AuthBg {
+  height: 100vh;
+  background-color: var(--app-green);
+}
+
+.AuthFormContainer {
+  width: 40vw;
+  min-width: 300px;
+  background-color: var(--app-gray);
+  height: 100vh;
+  padding: 30px;
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+/********************** auth page **********************/
