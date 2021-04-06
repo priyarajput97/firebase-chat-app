@@ -2,11 +2,13 @@ import { Button, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import Error from '../components/Error';
 import { validateUsername } from '../helpers/HelperFunction';
+import { useHistory } from 'react-router-dom';
 
 function LoginForm({ toggleAuthType }) {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const history = useHistory();
 
   const login = (e) => {
     e.preventDefault();
@@ -15,6 +17,7 @@ function LoginForm({ toggleAuthType }) {
         setError("Username can't contain spaces.");
         return;
       }
+      history.push('/profile');
     } else {
       setError('Please fill all the fields.');
     }
