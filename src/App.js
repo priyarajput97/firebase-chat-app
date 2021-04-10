@@ -5,6 +5,7 @@ import { Route, Switch } from 'react-router';
 import Profile from './pages/Profile';
 import { BrowserRouter } from 'react-router-dom';
 import { AuthProvider } from './contexts/AuthContext';
+import Home from './pages/Home';
 
 const theme = createMuiTheme({
   palette: {
@@ -28,6 +29,9 @@ function App() {
             </Route>
             <Route path='/profile'>
               <Profile />
+            </Route>
+            <Route path='/home'>
+              <Home />
             </Route>
             <Route path='/'>
               <Auth />

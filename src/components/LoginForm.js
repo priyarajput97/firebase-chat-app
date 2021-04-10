@@ -19,7 +19,7 @@ function LoginForm({ toggleAuthType }) {
         const response = await signin(email, password);
         console.log(response);
         if (response.user.refreshToken) {
-          history.push('/profile');
+          history.push('/home');
         }
       } else {
         setError('Please fill all the fields.');

@@ -23,7 +23,7 @@ function SignupForm({ toggleAuthType }) {
         }
         const response = await signup(email, password);
         if (response.user.refreshToken) {
-          history.push('/profile');
+          history.push('/home');
         }
       } else {
         setError('Please fill all the fields.');

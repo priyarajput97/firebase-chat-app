@@ -77,3 +77,35 @@ body {
 }
 
 /********************** auth page **********************/
+
+/********************** home page **********************/
+
+.HomeContainer {
+  height: 100vh;
+  display: flex;
+}
+
+.UsersContainer {
+  flex: 30% 0 0;
+  background-color: var(--app-gray);
+}
+
+.ChatContainer {
+  flex: 70% 0 0;
+  background-color: var(--app-gray-light);
+}
+
+.ProfileLinkContainer {
+  background-color: var(--app-green);
+  padding: 40px 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.UserTitle {
+  color: white;
+  font-weight: 200;
+}
+
+/********************** home page **********************/
