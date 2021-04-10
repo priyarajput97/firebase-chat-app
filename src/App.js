@@ -4,6 +4,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { Route, Switch } from 'react-router';
 import Profile from './pages/Profile';
 import { BrowserRouter } from 'react-router-dom';
+import { AuthProvider } from './contexts/AuthContext';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,21 +19,23 @@ const theme = createMuiTheme({
 
 function App() {
   return (
-    <MuiThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Switch>
-          <Route path='/login'>
-            <Auth />
-          </Route>
-          <Route path='/profile'>
-            <Profile />
-          </Route>
-          <Route path='/'>
-            <Auth />
-          </Route>
-        </Switch>
-      </BrowserRouter>
-    </MuiThemeProvider>
+    <AuthProvider>
+      <MuiThemeProvider theme={theme}>
+        <BrowserRouter>
+          <Switch>
+            <Route path='/login'>
+              <Auth />
+            </Route>
+            <Route path='/profile'>
+              <Profile />
+            </Route>
+            <Route path='/'>
+              <Auth />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </MuiThemeProvider>
+    </AuthProvider>
   );
 }
 

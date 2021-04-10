@@ -1,36 +1,42 @@
 import { Button, TextField } from '@material-ui/core';
 import React, { useState } from 'react';
 import Error from '../components/Error';
-import { validateUsername } from '../helpers/HelperFunction';
 import { useHistory } from 'react-router-dom';
+import { useAuth } from '../contexts/AuthContext';
 
 function LoginForm({ toggleAuthType }) {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const history = useHistory();
+  const { signin } = useAuth();
 
-  const login = (e) => {
-    e.preventDefault();
-    if (username && password) {
-      if (validateUsername(username)) {
-        setError("Username can't contain spaces.");
-        return;
+  const login = async (e) => {
+    try {
+      e.preventDefault();
+      setError('');
+      if (email && password) {
+        const response = await signin(email, password);
+        console.log(response);
+        if (response.user.refreshToken) {
+          history.push('/profile');
+        }
+      } else {
+        setError('Please fill all the fields.');
       }
-      history.push('/profile');
-    } else {
-      setError('Please fill all the fields.');
+    } catch (error) {
+      setError(error.message);
     }
   };
 
   return (
     <form noValidate autoComplete='off' className='FormContainer'>
       <TextField
-        label='Username'
+        label='Email'
         variant='outlined'
         className='mb'
-        value={username}
-        onChange={(val) => setUsername(val.target.value)}
+        value={email}
+        onChange={(val) => setEmail(val.target.value)}
       />
       <TextField
         label='Password'
