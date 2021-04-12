@@ -133,18 +133,6 @@ body {
   border-bottom: 1px solid var(--app-green-light);
 }
 
-.BackIcon {
-  margin-right: 20px;
-  color: var(--app-green);
-  cursor: pointer;
-  transition: all 0.2s ease-in-out !important;
-  border-radius: 50%;
-}
-
-.BackIcon:hover {
-  background-color: var(--app-green-light);
-}
-
 /********************** header **********************/
 
 /********************** profile page **********************/

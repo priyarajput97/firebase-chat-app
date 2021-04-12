@@ -27,6 +27,10 @@ export function AuthProvider({ children }) {
     return auth.signInWithEmailAndPassword(email, password);
   };
 
+  const signout = () => {
+    auth.signOut();
+  };
+
   const updateProfile = (displayName, photoURL) => {
     var user = currentUser;
     let updatedFields;
@@ -60,6 +64,7 @@ export function AuthProvider({ children }) {
     currentUser,
     signup,
     signin,
+    signout,
     updateProfile,
   };
 

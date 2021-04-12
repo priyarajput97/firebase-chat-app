@@ -42,7 +42,7 @@ function Profile() {
             />
           ) : (
             <AccountCircleRoundedIcon
-              style={{ fontSize: '200px', color: 'var(--app-gray)' }}
+              style={{ fontSize: '200px', color: 'var(--app-green-light)' }}
             />
           )}
 
