@@ -6,7 +6,6 @@ import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 function ProfileLink() {
   const { currentUser } = useAuth();
   const history = useHistory();
-  console.log(currentUser);
 
   const goToProfilePage = () => {
     history.push('/profile');

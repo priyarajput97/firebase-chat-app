@@ -2,7 +2,6 @@
 
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--app-gray-light);
 }
 
 * {
@@ -50,11 +49,26 @@ body {
   margin-bottom: 20px !important;
 }
 
+.my {
+  margin: 20px 0px !important;
+}
+
 .GreenCenteredLink {
   text-align: center;
   color: var(--app-green);
   cursor: pointer;
   margin: 10px 0;
+}
+
+.Heading {
+  font-size: 40px;
+  font-weight: 100;
+  text-transform: uppercase;
+  color: var(--app-green);
+}
+
+.TextField {
+  width: 400px;
 }
 
 /********************** common styles **********************/
@@ -69,7 +83,7 @@ body {
 .AuthFormContainer {
   width: 40vw;
   min-width: 300px;
-  background-color: var(--app-gray);
+  background-color: white;
   height: 100vh;
   padding: 30px;
   display: flex;
@@ -109,3 +123,56 @@ body {
 }
 
 /********************** home page **********************/
+
+/********************** header **********************/
+
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--app-green-light);
+}
+
+.BackIcon {
+  margin-right: 20px;
+  color: var(--app-green);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out !important;
+  border-radius: 50%;
+}
+
+.BackIcon:hover {
+  background-color: var(--app-green-light);
+}
+
+/********************** header **********************/
+
+/********************** profile page **********************/
+
+.ProfilePageContainer {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.ProfileContainer {
+  margin-left: 50px;
+}
+
+.UserProfileImage {
+  height: 250px;
+  width: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ProfileForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/********************** profile page **********************/
