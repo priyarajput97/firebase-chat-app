@@ -184,3 +184,36 @@ body {
 }
 
 /********************** profile section **********************/
+
+/********************** media queries **********************/
+
+@media screen and (max-width: 400px) {
+  .AuthFormContainer {
+    width: 100vw;
+  }
+
+  .ProfilePageContainer {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .ProfileContainer {
+    margin-top: 50px;
+    margin-left: 0px;
+    width: 100%;
+  }
+
+  .ProfileForm {
+    align-items: center;
+  }
+
+  .Heading {
+    font-size: 30px;
+  }
+
+  .TextField {
+    width: 100%;
+  }
+}
+
+/********************** media queries **********************/
