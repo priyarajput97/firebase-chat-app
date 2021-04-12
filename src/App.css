@@ -101,25 +101,12 @@ body {
 
 .UsersContainer {
   flex: 30% 0 0;
-  background-color: var(--app-gray);
+  background-color: var(--app-gray-light);
 }
 
 .ChatContainer {
   flex: 70% 0 0;
-  background-color: var(--app-gray-light);
-}
-
-.ProfileLinkContainer {
-  background-color: var(--app-green);
-  padding: 40px 15px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.UserTitle {
-  color: white;
-  font-weight: 200;
+  background-color: var(--app-gray);
 }
 
 /********************** home page **********************/
@@ -164,3 +151,36 @@ body {
 }
 
 /********************** profile page **********************/
+
+/********************** profile section **********************/
+
+.ProfileLinkContainer {
+  background-color: var(--app-green);
+  padding: 30px 15px;
+  display: flex;
+  align-items: center;
+}
+
+.UserTitleContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.UserTitle {
+  color: white;
+  font-weight: 200;
+  font-size: 25px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.UserProfileAvatar {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 10px;
+}
+
+/********************** profile section **********************/

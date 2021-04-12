@@ -11,26 +11,21 @@ function Header({ title }) {
 
   return (
     <div className='HeaderContainer'>
-      <IconButton>
-        <KeyboardBackspaceIcon
-          color='primary'
-          fontSize='large'
-          onClick={history.goBack}
-        />
+      <IconButton onClick={history.goBack}>
+        <KeyboardBackspaceIcon color='primary' fontSize='large' />
       </IconButton>
 
       <h1 className='Heading'>{title}</h1>
 
       <Tooltip title='Sign Out' arrow placement='left'>
-        <IconButton style={{ marginLeft: 'auto' }}>
-          <ExitToAppIcon
-            color='primary'
-            fontSize='large'
-            onClick={() => {
-              signout();
-              history.push('login');
-            }}
-          />
+        <IconButton
+          style={{ marginLeft: 'auto' }}
+          onClick={() => {
+            signout();
+            history.push('login');
+          }}
+        >
+          <ExitToAppIcon color='primary' fontSize='large' />
         </IconButton>
       </Tooltip>
     </div>

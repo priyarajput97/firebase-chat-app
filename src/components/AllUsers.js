@@ -5,7 +5,6 @@ function AllUsers() {
   return (
     <div>
       <ProfileLink />
-      users
     </div>
   );
 }
