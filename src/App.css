@@ -185,6 +185,38 @@ body {
 
 /********************** profile section **********************/
 
+/********************** users section **********************/
+
+.UserItem {
+  padding: 20px;
+  border-bottom: 1px solid var(--app-green-light);
+  color: #7c9473;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+
+.UserItem:hover {
+  background-color: var(--app-gray);
+}
+
+.ActiveUserItem {
+  background-color: var(--app-green-light);
+}
+
+/********************** users section **********************/
+
+/********************** chat section **********************/
+
+.ChatHeader {
+  background-color: var(--app-gray-light);
+  padding: 20px;
+  color: var(--app-green);
+  font-size: 30px;
+  font-weight: 100;
+}
+
+/********************** chat section **********************/
+
 /********************** media queries **********************/
 
 @media screen and (max-width: 400px) {
