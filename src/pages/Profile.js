@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { Button, TextField } from '@material-ui/core';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import Header from '../components/Header';
+import { uploadFile } from '../firebase-functions/fileUpload';
 
 function Profile() {
   const { currentUser, updateProfile } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const hiddenFileInput = useRef(null);
 
   useEffect(() => {
     currentUser.displayName && setName(currentUser.displayName);
@@ -21,6 +23,12 @@ function Profile() {
     } catch (error) {
       console.error(error);
     }
+  };
+
+  const handleImgUpload = async (event) => {
+    const file = event.target.files[0];
+    const fileURL = await uploadFile(file);
+    updateProfile(null, fileURL);
   };
 
   return (
@@ -46,15 +54,22 @@ function Profile() {
             />
           )}
 
-          {/* <Button
-          variant='contained'
-          color='primary'
-          type='password'
-          onClick={() => updateProfile(name)}
-          className='my'
-        >
-          Edit Profile Image
-        </Button> */}
+          <input
+            type='file'
+            ref={hiddenFileInput}
+            onChange={handleImgUpload}
+            style={{ display: 'none' }}
+          />
+
+          <Button
+            variant='outlined'
+            color='primary'
+            type='password'
+            onClick={() => hiddenFileInput.current.click()}
+            className='my'
+          >
+            Edit Profile Image
+          </Button>
         </div>
 
         <div className='ProfileContainer'>

@@ -36,12 +36,7 @@ export function AuthProvider({ children }) {
     let updatedFields;
 
     if (displayName && photoURL) {
-      updatedFields = {
-        displayName,
-        //to be changed later
-        photoURL:
-          'https://images.unsplash.com/photo-1497124401559-3e75ec2ed794?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8YmF0bWFufGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60',
-      };
+      updatedFields = { displayName, photoURL };
     } else if (displayName) {
       updatedFields = { displayName };
     } else if (photoURL) {
