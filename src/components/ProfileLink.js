@@ -2,7 +2,7 @@ import React from 'react';
 import { useHistory } from 'react-router';
 import { useAuth } from '../contexts/AuthContext';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
-import { Button } from '@material-ui/core';
+import { Button, IconButton } from '@material-ui/core';
 import EditIcon from '@material-ui/icons/Edit';
 
 function ProfileLink() {
@@ -28,9 +28,11 @@ function ProfileLink() {
         />
       )}
       <div className='UserTitleContainer'>
-        <span className='UserTitle' onClick={goToProfilePage}>
+        <span className='UserTitle'>
           Hi, {currentUser.displayName || currentUser?.email}
-          <EditIcon style={{ color: 'white', marginLeft: '10px' }} />
+          <IconButton style={{ marginLeft: '10px' }} onClick={goToProfilePage}>
+            <EditIcon style={{ color: 'white', cursor: 'pointer' }} />
+          </IconButton>
         </span>
         <Button
           variant='outlined'

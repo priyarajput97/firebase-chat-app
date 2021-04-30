@@ -198,8 +198,6 @@ body {
   color: white;
   font-weight: 200;
   font-size: 25px;
-  margin-bottom: 10px;
-  cursor: pointer;
   display: flex;
   align-items: center;
 }
@@ -220,11 +218,13 @@ body {
 /********************** users section **********************/
 
 .UserItem {
-  padding: 20px;
+  padding: 10px 20px;
   border-bottom: 1px solid var(--app-green-light);
   color: #7c9473;
   cursor: pointer;
   transition: all 0.2s linear;
+  display: flex;
+  align-items: center;
 }
 
 .UserItem:hover {
@@ -235,16 +235,29 @@ body {
   background-color: var(--app-green-light);
 }
 
+.friendAvatar {
+  width: 50px;
+  height: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  margin-right: 10px;
+}
+
 /********************** users section **********************/
 
 /********************** chat section **********************/
 
 .ChatHeader {
   background-color: var(--app-gray-light);
-  padding: 20px;
+  padding: 15px;
   color: var(--app-green);
   font-size: 30px;
   font-weight: 100;
+  display: flex;
+  align-items: center;
 }
 
 /********************** chat section **********************/
