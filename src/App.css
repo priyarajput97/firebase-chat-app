@@ -190,6 +190,8 @@ body {
 .UserTitleContainer {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
 }
 
 .UserTitle {
@@ -198,11 +200,15 @@ body {
   font-size: 25px;
   margin-bottom: 10px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .UserProfileAvatar {
   height: 70px;
   width: 70px;
+  min-height: 70px;
+  min-width: 70px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;

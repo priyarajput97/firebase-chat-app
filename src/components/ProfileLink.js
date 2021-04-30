@@ -3,6 +3,7 @@ import { useHistory } from 'react-router';
 import { useAuth } from '../contexts/AuthContext';
 import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 import { Button } from '@material-ui/core';
+import EditIcon from '@material-ui/icons/Edit';
 
 function ProfileLink() {
   const { currentUser, signout } = useAuth();
@@ -29,6 +30,7 @@ function ProfileLink() {
       <div className='UserTitleContainer'>
         <span className='UserTitle' onClick={goToProfilePage}>
           Hi, {currentUser.displayName || currentUser?.email}
+          <EditIcon style={{ color: 'white', marginLeft: '10px' }} />
         </span>
         <Button
           variant='outlined'

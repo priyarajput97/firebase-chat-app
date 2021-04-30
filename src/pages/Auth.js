@@ -16,7 +16,7 @@ function Auth() {
   return (
     <div className='AuthBg'>
       <div className='AuthFormContainer'>
-        <img src={whiteLogo} className='AuthPageMobLogo' />
+        <img src={whiteLogo} className='AuthPageMobLogo' alt='logo' />
         {authType === LOGIN ? (
           <LoginForm toggleAuthType={toggleAuthType} />
         ) : (
@@ -24,7 +24,7 @@ function Auth() {
         )}
       </div>
       <div className='LogoContainer'>
-        <img src={logo} className='AuthPageLogo' />
+        <img src={logo} className='AuthPageLogo' alt='logo' />
       </div>
     </div>
   );
