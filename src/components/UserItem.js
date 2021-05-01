@@ -1,17 +1,18 @@
 import React from 'react';
+import AccountCircleRoundedIcon from '@material-ui/icons/AccountCircleRounded';
 
-function UserItem({ activeChat, setActiveChat }) {
+function UserItem({ user, activeChat, setActiveChat }) {
   return (
     <div
       className={activeChat ? 'UserItem ActiveUserItem' : 'UserItem'}
       onClick={setActiveChat}
     >
-      <img
-        src='https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1868&q=80'
-        className='friendAvatar'
-        alt='friend'
-      />
-      Spider man
+      {user.photoURL ? (
+        <img src={user.photoURL} className='friendAvatar' alt='friend' />
+      ) : (
+        <AccountCircleRoundedIcon color='primary' className='friendAvatar' />
+      )}
+      {user.displayName ? user.displayName : user.email}
     </div>
   );
 }

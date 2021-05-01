@@ -20,3 +20,19 @@ export const updateUserDetails = async (uid, updatedFields) => {
     console.error(error);
   }
 };
+
+export const getAllUsers = async (currentUserUid) => {
+  try {
+    let users = [];
+    const usersRef = db.collection('users');
+    const snapshot = await usersRef.get();
+    snapshot.forEach((doc) => {
+      if (doc.id !== currentUserUid) {
+        users.push(doc.data());
+      }
+    });
+    return users;
+  } catch (error) {
+    console.error(error);
+  }
+};
