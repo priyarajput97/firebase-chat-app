@@ -9,6 +9,7 @@ function Profile() {
   const { currentUser, updateProfile } = useAuth();
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  const [bio, setBio] = useState('');
   const hiddenFileInput = useRef(null);
 
   useEffect(() => {
@@ -19,7 +20,7 @@ function Profile() {
   const handleProfileUpdate = (e) => {
     try {
       e.preventDefault();
-      updateProfile(name);
+      updateProfile(name, null, bio);
     } catch (error) {
       console.error(error);
     }
@@ -85,6 +86,12 @@ function Profile() {
               label='Display Name'
               value={name}
               onChange={(e) => setName(e.target.value)}
+            />
+            <TextField
+              className='TextField mb'
+              label='Bio'
+              value={bio}
+              onChange={(e) => setBio(e.target.value)}
             />
             <Button
               variant='outlined'

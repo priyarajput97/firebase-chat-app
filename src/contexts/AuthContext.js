@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { auth } from '../firebase';
+import { createUser, updateUserDetails } from '../firebase-functions/Users';
 
 const AuthContext = React.createContext();
 
@@ -19,8 +20,12 @@ export function AuthProvider({ children }) {
     return unsubscribe;
   }, []);
 
-  const signup = (email, password) => {
-    return auth.createUserWithEmailAndPassword(email, password);
+  const signup = async (email, password) => {
+    const res = await auth.createUserWithEmailAndPassword(email, password);
+    if (res?.user?.uid) {
+      createUser(res.user.uid, email);
+    }
+    return res;
   };
 
   const signin = (email, password) => {
@@ -31,7 +36,7 @@ export function AuthProvider({ children }) {
     auth.signOut();
   };
 
-  const updateProfile = (displayName, photoURL) => {
+  const updateProfile = (displayName, photoURL, bio) => {
     var user = currentUser;
     let updatedFields;
 
@@ -48,7 +53,10 @@ export function AuthProvider({ children }) {
     user
       .updateProfile(updatedFields)
       .then(function () {
-        console.log('done');
+        if (bio) {
+          updatedFields['bio'] = bio;
+        }
+        updateUserDetails(user.uid, updatedFields);
       })
       .catch(function (error) {
         console.error(error);
