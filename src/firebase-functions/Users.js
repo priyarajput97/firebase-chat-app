@@ -25,11 +25,9 @@ export const getAllUsers = async (currentUserUid) => {
   try {
     let users = [];
     const usersRef = db.collection('users');
-    const snapshot = await usersRef.get();
+    const snapshot = await usersRef.where('uid', '!=', currentUserUid).get();
     snapshot.forEach((doc) => {
-      if (doc.id !== currentUserUid) {
-        users.push(doc.data());
-      }
+      users.push(doc.data());
     });
     return users;
   } catch (error) {
