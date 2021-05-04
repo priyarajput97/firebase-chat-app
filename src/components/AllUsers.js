@@ -10,17 +10,17 @@ function AllUsers() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    getUsers();
-  }, []);
+    const getUsers = async () => {
+      try {
+        const users = await getAllUsers(currentUser.uid);
+        setUsers(users);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  const getUsers = async () => {
-    try {
-      const users = await getAllUsers(currentUser.uid);
-      setUsers(users);
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    getUsers();
+  }, [currentUser]);
 
   return (
     <div>
@@ -31,8 +31,8 @@ function AllUsers() {
           <UserItem
             key={user.uid}
             user={user}
-            // activeChat={activeChat}
-            // setActiveChat={setActiveChat}
+            activeChat={activeChat}
+            setActiveChat={setActiveChat}
           />
         );
       })}

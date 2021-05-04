@@ -308,6 +308,14 @@ body {
   .TextField {
     width: 100%;
   }
+
+  .UsersContainer {
+    flex: 100% 0 0;
+  }
+
+  .ChatContainer {
+    display: none;
+  }
 }
 
 /********************** media queries **********************/
