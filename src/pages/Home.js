@@ -1,6 +1,6 @@
 import React from 'react';
 import AllUsers from '../components/AllUsers';
-import Chat from '../components/Chat';
+import Chat from '../components/ChatSection';
 
 function Home() {
   return (

@@ -258,6 +258,29 @@ body {
   font-weight: 100;
   display: flex;
   align-items: center;
+  height: 80px;
+}
+
+.ChatsSection {
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 80px);
+}
+
+.ChatsContainer {
+  flex-grow: 1;
+}
+
+.ChatInputSection {
+  display: flex;
+  width: 100%;
+  padding: 20px 15px;
+  align-items: center;
+}
+
+.ChatInput {
+  flex-grow: 1;
+  margin-right: 10px !important;
 }
 
 /********************** chat section **********************/
